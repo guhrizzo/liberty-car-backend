@@ -1,5 +1,7 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import StreamingResponse
+import io
 from app.pdf_service import gerar_pdf
 
 router = APIRouter()
@@ -39,4 +41,7 @@ async def gerar_pdf_endpoint(request: Request):
     parcelas_totais, parcelas_pagas, parcelas_atrasadas, valor_pecas_reparadas, valor_parcela
 )
 
-    return FileResponse(path=pdf_path, filename="proposta.pdf", media_type="application/pdf")
+    pdf_bytes = open(pdf_path, "rb").read()
+    return StreamingResponse(io.BytesIO(pdf_bytes), media_type="application/pdf", headers={
+        "Content-Disposition": "attachment; filename=Proposta.pdf"
+    })
