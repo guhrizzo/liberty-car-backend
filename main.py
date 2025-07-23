@@ -19,3 +19,9 @@ app.include_router(router)
 @app.get("/")
 def root():
     return {"message": "API Liberty Car rodando 🎉"}
+
+@app.post("/")
+async def handle_post(request: Request):
+    data = await request.json()  # pega o JSON enviado no corpo da requisição
+    # aqui você processa os dados recebidos
+    return {"received_data": data}
