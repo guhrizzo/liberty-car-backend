@@ -111,7 +111,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
       """
     
 
-    pasta_base = os.path.abspath("app")  # para base_url do PDF
+    pasta_base = os.path.abspath("app/static")  # para base_url do PDF
 
     html_content = f"""
     <!DOCTYPE html>
