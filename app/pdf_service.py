@@ -175,7 +175,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
         .container {{
           height: 100%;
           width: 100%;
-          background-image: url('fundo-1.png');
+          
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -257,7 +257,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
 
         .container-2 {{
           position: relative;
-          background-image: url('fundo-2.png');
+          
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -348,7 +348,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
 
         .container-3 {{
           position: relative;
-          background-image: url('fundo-3.png');
+          
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -454,7 +454,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
       <div class="page">
         <div class="container">
           <h1>Proposta </br> <span> Liberty Car</span></h1>
-          <img src="seta.png" alt="Seta" class="seta">
+          <!-- <img src="seta.png" alt="Seta" class="seta">  -->
           <div class="date">
             <p>{num_contrato}</p>
             <p>{data_contrato}</p>
@@ -469,7 +469,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
               <p>{cpf}</p>
             </div>
         </div>
-        <img src="logo-liberty-car-blue.png" alt="Logo Liberty Car" class="logo-blue">
+        <!-- <img src="logo-liberty-car-blue.png" alt="Logo Liberty Car" class="logo-blue">  -->
         </div>
       </div>
       <div class="page">
@@ -546,23 +546,25 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
             <p> Este valor inclui os seguintes pontos:</p>
             <ul class="list">
               <div class="check">
-              <li><img src="check-blue.png" alt="Check"> Assunção integral da dívida ativa até a quitação total junto ao banco. </li>
+              <li><!-- <img src="check-blue.png" alt="Check"> --> Assunção integral da dívida ativa até a quitação total junto ao banco. </li>
               </div>
               <div class="check">
-              <li><img src="check-blue.png" alt="Check"> Assunção de TODAS as pendências do veículo junto ao Detran </br>
+              <li><!-- <img src="check-blue.png" alt="Check"> --> Assunção de TODAS as pendências do veículo junto ao Detran </br>
               (IPVA atrasado, multas, licenciamento). </li>
               </div>
               <div class="check">
-              <li><img src="check-blue.png" alt="Check"> Assunção dos custos de reparo do veículo (incluindo estética e mecânica).
+              <li><!-- <img src="check-blue.png" alt="Check"> --> Assunção dos custos de reparo do veículo (incluindo estética e mecânica).
               Regularização completa da documentação do veículo,  incluindo taxas </br> de
               transferência, vistoria, desbloqueio e o que mais for necessário. </li>
               </div>
               <div class="check">
-              <li><img src="check-blue.png" alt="Check"> Cobertura de eventuais pendências com cartórios (procurações, bloqueios e </br>
+              <li> <!-- <img src="check-blue.png" alt="Check"> --> Cobertura de eventuais pendências com cartórios (procurações, bloqueios e </br>
               restrições judiciais). </li>
               </div>
               <div class="check">
-              <li><img src="check-blue.png" alt="Check"> Serviço adicional de limpeza de nome, caso a dívida com o banco esteja </br>
+              <li>
+              <!-- <img src="check-blue.png" alt="Check"> -->
+              Serviço adicional de limpeza de nome, caso a dívida com o banco esteja </br>
               vinculada ao CPF do proprietário. </li>
               </div>
             </ul>
