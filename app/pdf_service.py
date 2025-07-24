@@ -391,7 +391,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
         .car-value {{
           margin-right: 50px;
           font-family: 'Inter-medium', sans-serif;
-          font-size: 40px;
+          font-size: 30px;
           color: #f2f2f2;
           display: flex;
           align-items: center;
@@ -406,6 +406,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
 
         .prop-comercial p {{
           color: #e5e5e5;
+          
         }}
 
         .text {{
