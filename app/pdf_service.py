@@ -93,8 +93,8 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
       {bloco_licenciamento}
       {bloco_multas}
       <div class="dados">
-        <p>Total de encargos administrativos:</p>
-        <p class="car-date">R$: {total_encargos_formatado}</p>
+        <p class="red">Total de encargos administrativos:</p>
+        <p class="info-red">R$: {total_encargos_formatado}</p>
       </div>
       """
     else:
@@ -106,12 +106,12 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
       <div class="path-line3"></div>
       <div class="dados">
         <p>Peças que precisam de reparo : {pecas_reparo} :</p>
-        <p class="car-date">{valor_pecas_reparo_fmt}</p>
+        <p class="info-red">{valor_pecas_reparo_fmt}</p>
       </div>
       """
     
 
-    pasta_base = os.path.abspath("app/static")  # para base_url do PDF
+    pasta_base = os.path.abspath("static")  # para base_url do PDF
 
     html_content = f"""
     <!DOCTYPE html>
@@ -251,6 +251,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
         p {{
           font-size: 18px;
           margin: 5px 0;
+          color: #e5e5e5;
           font-family: 'Arial', sans-serif;
           font-weight: normal;
         }}
@@ -303,17 +304,12 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
         .subcontainer p {{
           margin-left: 50px;
           font-size: 14px;
-          color: #e5e5e5;
         }}
 
         .dados {{
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-        }}
-
-        .dados p {{
-          color: #e5e5e5;
         }}
 
         .car-date {{
@@ -384,7 +380,6 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
         }}
 
         .subcontainer-2 p {{
-          color: #e5e5e5;
           margin-left: 50px;
         }}
 
@@ -447,6 +442,13 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
           margin-bottom: 10px;
           line-height: 1.5;
           font-size: 15px;
+        }}
+
+        .info-red {{
+          color: #990033;
+          font-weight: bold;
+          margin-left: 50px;
+          margin-right: 50px;
         }}
 
       </style>
@@ -518,7 +520,7 @@ def gerar_pdf(nome, cpf, data_contrato, num_contrato,
             </div>
             <div class="dados">
               <p>Saldo devedor total:</p>
-              <p class="car-date"> {saldo_devedor_formatado}</p>
+              <p class="info-red"> {saldo_devedor_formatado}</p>
             </div>
             <div class="path-line2">
             </div>

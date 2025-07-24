@@ -25,3 +25,7 @@ async def handle_post(request: Request):
     data = await request.json()  # pega o JSON enviado no corpo da requisição
     # aqui você processa os dados recebidos
     return {"received_data": data}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=False)
