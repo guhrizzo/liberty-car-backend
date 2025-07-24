@@ -1,6 +1,12 @@
 from weasyprint import HTML
 import os
 
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+HTML_FILE = os.path.join(BASE_DIR, 'teste.html')
+
+# Gera PDF a partir do HTML na raiz
+HTML(filename=HTML_FILE).write_pdf('output.pdf')
+
 def gerar_pdf(nome, cpf, data_contrato, num_contrato,
               marca, modelo, placa, valor_fibe,
               ano_veiculo, divida, ipva, licenciamento,

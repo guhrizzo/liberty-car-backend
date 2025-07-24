@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
 from app.routes import router
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 app = FastAPI()
 app.add_middleware(
@@ -26,6 +27,22 @@ async def handle_post(request: Request):
     # aqui você processa os dados recebidos
     return {"received_data": data}
 
+import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    # Rodando como .exe
+    base_path = sys._MEIPASS
+else:
+    # Rodando como .py normal
+    base_path = os.path.abspath(".")
+
+static_folder = os.path.join(base_path, 'static')
+print(static_folder)
+
+print("Base Path:", base_path)
+print("Static Folder:", static_folder)
+print("Conteúdo:", os.listdir(static_folder))
+
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=False)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
